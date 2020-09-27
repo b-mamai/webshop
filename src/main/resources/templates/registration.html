@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring Security Example </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar bg-success">
+    <a href="/personal" class="btn">Home page</a>
+</nav>
+<div class="container">
+    <span th:text="${message != null} ? ${message}"></span>
+    <form th:action="@{/register}" method="post">
+        <div><input type="text" name="username" placeholder="username"/></div>
+        <div><input type="password" name="password" placeholder="password"/></div>
+        <div><input type="submit" value="Register" class="btn btn-primary"/></div>
+    </form>
+</div>
+<footer class="footer-copyright text-center fixed-bottom bg-success py-3">©Copyright 2020 Bohdan Mamai</footer>
+</body>
+</html>

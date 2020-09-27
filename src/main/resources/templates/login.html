@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Spring Security Example </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<nav class="navbar bg-success">
+    <a href="/personal" class="btn">Personal page</a>
+    <a href="/register" class="btn">Registration</a>
+</nav>
+<div class="container">
+    <span th:if="${param.error}">Invalid username or password.</span>
+    <span th:if="${param.logout}">You have been logged out.</span>
+    <span th:text="${message != null} ? ${message}"></span>
+
+    <form th:action="@{/login}" method="post">
+        <div><input type="text" name="username" placeholder="username"/></div>
+        <div><input type="password" name="password" placeholder="password"/></div>
+        <div><input type="submit" value="Sign In" class="btn btn-primary"/></div>
+    </form>
+</div>
+<footer class="footer-copyright text-center fixed-bottom bg-success py-3">©Copyright 2020 Bohdan Mamai</footer>
+</body>
+</html>
